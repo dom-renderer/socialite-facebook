@@ -38,6 +38,7 @@ return [
     ],
 
     'instagram' => [
+        'app_id' => env('INSTA_APP_ID'),
         'client_id' => env('INSTA_CLIENT_ID'),
         'client_secret' => env('INSTA_CLIENT_SECRET'),
         'redirect' => env('INSTA_REDIRECT')

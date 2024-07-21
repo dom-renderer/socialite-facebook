@@ -13,10 +13,12 @@ class InstagramController extends Controller
     //https://stackoverflow.com/questions/59142407/laravel-integrate-with-instagram-api-after-october-2019
     public function auth()
     {
-        $appId = config('services.instagram.client_id');
+        $appId = config('services.instagram.app_id');
         $redirectUri = urlencode(config('services.instagram.redirect'));
 
-        return redirect()->to("https://api.instagram.com/oauth/authorize?app_id={$appId}&redirect_uri={$redirectUri}&scope=user_profile,user_media&response_type=code");
+        return redirect()->to("https://api.instagram.com/oauth/authorize?client_id={$appId},&redirect_uri={$redirectUri},&response_type=code,&scope=user_profile,user_media");
+
+        // return redirect()->to("https://api.instagram.com/oauth/authorize?redirect_uri={$redirectUri}&app_id={$appId}&scope=user_profile,user_media&response_type=code");
     }
     
     public function callback(Request $request)
