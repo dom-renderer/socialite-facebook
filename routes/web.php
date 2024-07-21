@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\FacebookController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,8 @@ Route::middleware(['auth'])->group(function() {
     
     Route::get('facebook/auth', [FacebookController::class, 'auth'])->name('facebook.auth');
     Route::get('facebook/auth/callback', [FacebookController::class, 'callback'])->name('facebook.auth.callback');
+
+    Route::get('instagram/auth', [InstagramController::class, 'auth'])->name('instagram.auth');
+    Route::get('instagram/auth/callback', [InstagramController::class, 'callback'])->name('instagram.auth.callback');
 
 });

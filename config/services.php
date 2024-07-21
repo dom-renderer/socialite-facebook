@@ -37,4 +37,10 @@ return [
         'scope' => ['email', 'user_birthday', 'user_gender', 'user_link', 'user_location', 'user_hometown', 'user_age_range', 'user_friends', 'user_likes', 'public_profile', 'user_messenger_contact', 'user_photos', 'user_videos', 'user_posts']
     ],
 
+    'instagram' => [
+        'client_id' => env('INSTA_CLIENT_ID'),
+        'client_secret' => env('INSTA_CLIENT_SECRET'),
+        'redirect' => env('INSTA_REDIRECT')
+    ]
+
 ];
