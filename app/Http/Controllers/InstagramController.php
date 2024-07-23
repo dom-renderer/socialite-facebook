@@ -16,7 +16,14 @@ class InstagramController extends Controller
         $appId = config('services.instagram.app_id');
         $redirectUri = urlencode(config('services.instagram.redirect'));
 
-        return redirect()->to("https://api.instagram.com/oauth/authorize?client_id={$appId},&redirect_uri={$redirectUri},&response_type=code,&scope=user_profile,user_media");
+        $url = "https://api.instagram.com/oauth/authorize?client_id=" . env('INSTA_CLIENT_ID') . "&redirect_uri=" . env('INSTA_REDIRECT') . "&scope=user_profile,user_media&response_type=code";
+        
+        //https://justinstolpe.com/blog_code/instagram_graph_api/get_users_info_and_posts.php
+        //https://github.com/jstolpe/blog_code/blob/master/instagram_graph_api/get_users_info_and_posts.php
+        //Endpoint: https://graph.facebook.com/v12.0/{ig-user-id}?fields=business_discovery.username({ig-username}){username,website,name,ig_id,id,profile_picture_url,biography,follows_count,followers_count,media_count,media{id,caption,like_count,comments_count,timestamp,username,media_product_type,media_type,owner,permalink,media_url,children{media_url}}}&access_token={access-token}
+
+
+        return redirect()->to($url);
 
         // return redirect()->to("https://api.instagram.com/oauth/authorize?redirect_uri={$redirectUri}&app_id={$appId}&scope=user_profile,user_media&response_type=code");
     }

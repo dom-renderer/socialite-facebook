@@ -21,6 +21,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('instagram/deauth', [FacebookController::class, 'deauth']);
+Route::get('instagram/deletion', [FacebookController::class, 'deletion']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacyPolicy'])->name('privacy-policy');
 
