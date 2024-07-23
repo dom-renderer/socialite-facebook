@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\LinkedInController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,5 +35,8 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('instagram/auth', [InstagramController::class, 'auth'])->name('instagram.auth');
     Route::get('instagram/auth/callback', [InstagramController::class, 'callback'])->name('instagram.auth.callback');
+
+    Route::get('linkedin/auth', [LinkedInController::class, 'auth'])->name('linkedin.auth');
+    Route::get('linkedin/auth/callback', [LinkedInController::class, 'callback'])->name('linkedin.auth.callback');
 
 });

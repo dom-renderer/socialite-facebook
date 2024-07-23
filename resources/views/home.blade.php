@@ -3,6 +3,8 @@
 @section('content')
 <div class="container">
 
+    <a href="{{ route('linkedin.auth') }}" class="btn" style="background: pink;"> <i class="fa fa-instagram"></i> Linkedin </a>
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
